@@ -1,0 +1,157 @@
+/* * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+*/
+#lang_panel {
+	z-index: 5;
+	top: 5px;
+	right: 5px;
+	position: absolute;
+	width: 70px;
+	display: inline-block;
+}
+
+/* For mobile phones: */
+@media only screen and (min-width: 1400px) {
+	#lang_panel { right: 68px; }
+}
+
+/* For mobile phones: */
+@media only screen and (max-width: 550px) {
+	#lang_panel { right: 68px; }
+}
+
+#lang_flag {
+	background-color: rgb(255, 255, 255);
+	border: 1px solid #dddddd;
+	cursor: pointer;
+    display: block;
+    float: left;
+	height: 34px;
+	line-height: 20px;
+	padding-bottom: 6px;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 6px;
+    position: relative;
+	touch-action: manipulation;
+	user-select: none;
+    width: 44px;
+}
+
+#lang_selector {
+	background-color: rgb(255, 255, 255);
+	border: 1px solid #dddddd;
+	cursor: pointer;
+    display: block;
+	height: 34px;
+	line-height: 20px;
+    float: left;
+	margin-left: -1px;
+	padding-left: 8px;
+    padding-right: 8px;
+	position: relative;
+}
+
+#lang_selector:hover {
+	background: #f0f0f0;
+}
+
+.open #lang_selector{
+	background: #e6e6e6;
+}
+
+#caret {
+    border-left: 4px solid transparent;
+	border-right: 4px solid transparent;
+	border-top: 4px dashed;
+	display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 0;
+    vertical-align: middle;
+	line-height: 20px;
+}
+
+#dropdown-lang {
+	display: none;
+	position: absolute;
+	left: -112px;
+	top: 34px;
+	float: left;
+	z-index: 1000;
+	width: 181px;
+	padding: 5px 0;
+    margin: 10px 0 0;
+    list-style: none;
+	font-size: 14px;
+    text-align: left;
+    background-color: #fff;
+	border: 1px solid rgba(0,0,0,0.15);
+
+}
+
+#dropdown-lang li {
+	box-sizing: border-box;
+	color: rgb(51, 51, 51);
+	cursor: auto;
+	display: block;
+	float:left;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	height: 26px;
+	line-height: 20px;
+	list-style-image: none;
+	list-style-position: outside;
+	list-style-type: none;
+	text-align: left;
+	user-select: none;
+	width: 179px;
+}
+
+#dropdown-lang li a {
+	text-decoration: none;
+	display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: normal;
+    line-height: 1.42857143;
+    color: #333;
+    white-space: nowrap;
+	cursor: pointer;
+}
+
+#dropdown-lang li a:hover {
+	text-decoration:none;
+	color:#262626;
+	background-color:#f5f5f5
+}
+
+#dropdown-lang li.active a,
+#dropdown-lang li.active a:hover {
+	color: #fff;
+    text-decoration: none;
+    outline: 0;
+    background-color: #337ab7;
+}
+
+[class^="ico-lang"],
+[class*=" ico-lang"] {
+	background: url("flags_matrix.png") no-repeat;
+	width: 18px; height: 12px; display: block; display: inline-block;
+	padding: 0px; margin: 0px; border: none; font-size: 1px; line-height: 1px;
+	overflow: hidden;
+}
+
+span.ico-lang-en, i.ico-lang-en { background-position: -378px -132px; }
+span.ico-lang-ru, i.ico-lang-ru { background-position: -324px -252px; }
+span.ico-lang-de, i.ico-lang-de { background-position: -72px -60px; }
+span.ico-lang-es, i.ico-lang-es { background-position: -90px -228px; }
+span.ico-lang-fr, i.ico-lang-fr { background-position: -108px -216px; }
+span.ico-lang-it, i.ico-lang-it { background-position: -162px -240px; }
+span.ico-lang-pl, i.ico-lang-pl { background-position: -288px -144px; }
+span.ico-lang-pt, i.ico-lang-pt { background-position: -36px -216px; }
+span.ico-lang-br, i.ico-lang-br { background-position: -288px -240px; }
+span.ico-lang-ro, i.ico-lang-ro { background-position: -324px -180px; }

@@ -1,0 +1,248 @@
+form {
+	color: rgb(68, 68, 68);
+	display: block;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+.form-table {
+	border-collapse: collapse;
+	width: 100%;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	color: rgb(68, 68, 68);
+}
+
+.form-table th {
+	padding: 10px 0 10px 0; 
+	width: 140px;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: left;
+	vertical-align: top;
+	//display: table-cell;
+}
+
+.window-ap .form-table th {
+	width: 210px;
+}
+
+.form-table td {
+	padding: 10px 0 10px 0;
+	font-size: 14px;
+	vertical-align: top;
+	//display: table-cell;
+}
+
+.form-table p {
+	margin: 4px 0 0 0;
+	font-size: 11px
+}
+
+label {
+	cursor: pointer;
+	line-height: 28px;
+}
+
+input, select, submit, textarea {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif
+}
+
+textarea {
+	margin: 0px;
+	height: 200px;
+	width: 400px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+.form-table input,
+.form-table select,
+.form-table textarea {
+	line-height: 20px;
+	font-size: 15px;
+	padding: 3px 5px;
+	border: 1px solid #ddd;
+	-webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, .07);
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, .07)
+}
+
+.form-table input[type=email],
+.form-table input[type=password],
+.form-table input[type=text],
+.form-table input[type=url],
+.form-table select {
+	width: 200px
+}
+
+.window-ap .form-table input[type=email],
+.window-ap .form-table input[type=password],
+.window-ap .form-table input[type=text],
+.window-ap .form-table input[type=url],
+.window-ap .form-table select {
+	width: 350px
+}
+
+.sendformblock {
+	margin: 20px 0 15px 0;
+	padding: 0;
+	font-size: 14px;
+	vertical-align: top;
+	text-align: left;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.sendformblock input[type=submit],
+.sendformblock button,
+.pagelink ,
+.newslink {
+	vertical-align: baseline;
+	white-space:nowrap;
+	text-align: center;
+	word-spacing:0px;
+	background-color: rgb(247, 247, 247);
+	color: rgb(85, 85, 85);
+	cursor: pointer;
+	user-select: none;
+	display: inline-block;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-size: 14px;
+	height: 30px;
+	min-width: 125px;
+	line-height: 28px;
+	border-bottom-style: solid;
+	border-image-width: 1;
+	border-left-color: rgb(204, 204, 204);
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-right-color: rgb(204, 204, 204);
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-top-color: rgb(204, 204, 204);
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	box-shadow: rgb(204, 204, 204) 0px 1px 0px 0px;
+	box-sizing: border-box;
+	padding-top: 0;
+	padding-bottom: 2px;
+	padding-left: 12px;
+	padding-right: 12px;
+	text-decoration: none;
+}
+
+#newslink {
+	float: right;
+}
+
+#pagelinkleft {
+	margin: 16px;
+	float: left;
+	margin-left: 100px;
+}
+
+#pagelinkright {
+	margin: 16px;
+	float: right;
+	margin-right: 100px;
+}
+
+.form-table.install-success td,
+.form-table.install-success th {
+	vertical-align: middle;
+	padding: 16px 20px 16px 0
+}
+.form-table.install-success td p {
+	margin: 0;
+	font-size: 14px
+}
+.message {
+	border-left: 4px solid #dc3232;
+	padding: .7em .6em;
+	background-color: #fbeaea
+}
+
+/* For mobile phones: */
+@media only screen and (max-width: 550px) {
+	textarea {
+	height: 200px;
+	width: 200px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+}
+
+@media screen and (max-width: 782px) {
+    .form-table {
+        margin-top: 0
+    }
+    .form-table td,
+    .form-table th {
+        display: block;
+        width: auto;
+        vertical-align: middle
+    }
+    .form-table th {
+        padding: 20px 0 0
+    }
+    .form-table td {
+        padding: 5px 0;
+        border: 0;
+        margin: 0
+    }
+    input,
+    textarea {
+        font-size: 16px
+    }
+    .form-table td input[type=text],
+    .form-table td input[type=email],
+    .form-table td input[type=url],
+    .form-table td input[type=password],
+    .form-table td select,
+    .form-table td textarea {
+        width: 100%;
+        font-size: 16px;
+        line-height: 1.5;
+        padding: 7px 10px;
+        display: block;
+        max-width: none;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box
+    }
+	label {
+		line-height: 14px;
+	}
+}
+
+/* FORMULARZ W PANELU ADMINISTRACYJNYM */
+
+.block .form-table td,
+.block  .form-table th {
+	display: block;
+	width: auto;
+	vertical-align: middle;
+}
+
+.block  .form-table th {
+	padding: 10px 0 0
+}
+
+.block  label {
+		line-height: 14px;
+}
+
+input[password-strength=] { color: #FF0000; }
+input[password-strength=] { color: #FF7F00; }
+input[password-strength=] { color: #FFFF00; }
+input[password-strength=strong] { color: #7FFF00; }
+input[password-strength=very_strong] { color: #00FF00; }
