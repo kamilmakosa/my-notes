@@ -1,9 +1,6 @@
 <?php
 define("ALLOW_INCLUDE", "yes");
-define("PATH", "/demo/my-notes");
-session_start();
-include($_SERVER['DOCUMENT_ROOT'].PATH.'/functions/functions.php');
-include($_SERVER['DOCUMENT_ROOT'].PATH.'/functions/autostart.php');
+include('../bootstrapper.php');
 include($_SERVER['DOCUMENT_ROOT'].PATH.'/template/head.php');
 include($_SERVER['DOCUMENT_ROOT'].PATH.'/template/menu.php');
 include($_SERVER['DOCUMENT_ROOT'].PATH.'/template/header.php');

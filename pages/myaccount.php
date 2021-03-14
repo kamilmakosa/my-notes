@@ -1,7 +1,6 @@
 <?php
 define("ALLOW_INCLUDE", "yes");
-define("PATH", "/demo/my-notes");
-session_start();
+include('../bootstrapper.php');
 include($_SERVER['DOCUMENT_ROOT'].PATH.'/functions/functions.php');
 
 if (isset($_POST['datetime_zone']) && !empty($_POST['datetime_zone'])) {

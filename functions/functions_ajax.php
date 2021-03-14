@@ -1,10 +1,7 @@
 <?php
 //if(!defined("ALLOW_INCLUDE"))	die('Access forbidden'); //KOMENTARZ PONIEWAZ JAVASCRIPT MUSI MIEC DOSTEP
 define("ALLOW_INCLUDE", "yes");
-define("PATH", "/demo/my-notes");
-session_start();
-include($_SERVER['DOCUMENT_ROOT'].PATH.'/functions/functions.php');
-include($_SERVER['DOCUMENT_ROOT'].PATH.'/functions/autostart.php');
+include('../bootstrapper.php');
 
 $function = @$_REQUEST["function"];
 

@@ -1,9 +1,6 @@
 <?php
 define("ALLOW_INCLUDE", "yes");
-define("PATH", "/demo/my-notes");
-session_start();
-include($_SERVER['DOCUMENT_ROOT'].PATH.'/functions/functions.php');
-include($_SERVER['DOCUMENT_ROOT'].PATH.'/functions/autostart.php');
+include('../bootstrapper.php');
 
 if (isset($_POST['user_login']) && isset($_POST['user_pass'])) {
 	if (!empty($_POST["user_login"]) && !empty($_POST["user_pass"])) {
