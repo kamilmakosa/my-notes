@@ -120,7 +120,7 @@ function convert_datetime($from, $to, $datetime) {
 }
 
 function get_config($key) {
-	$dir = $_SERVER['DOCUMENT_ROOT'].PATH.'/config';
+	$dir = __DIR__.'/../config';
 	$files = scandir($dir);
 	$files = array_filter($files, function($file) {
 		return preg_match('/^.+\.php$/', $file);
@@ -129,7 +129,7 @@ function get_config($key) {
 	$config = [];
 
 	foreach($files as $file) {
-		$cSection = include($_SERVER['DOCUMENT_ROOT'].PATH.'/config/'.$file);
+		$cSection = include(__DIR__.'/../config/'.$file);
 		foreach($cSection as $cKey => $cValue) {
 			foreach($cSection[$cKey] as $ccKey => $ccValue) {
 				$config[$cKey.'_'.$ccKey] = $ccValue;

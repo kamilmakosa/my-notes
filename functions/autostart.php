@@ -31,5 +31,5 @@ if (isset($_SESSION['user_login']) && get_user_info('user_timezone') != 'default
 }
 
 //LOAD LANGUAGE FILE
-include($_SERVER['DOCUMENT_ROOT'].PATH.'/languages/'.get_lang_info('lang_file',$_SESSION['language']));
+include(__DIR__.'/../languages/'.get_lang_info('lang_file',$_SESSION['language']));
 ?>
