@@ -1,6 +1,5 @@
 <?php
 if(!defined("ALLOW_INCLUDE"))	die('Access forbidden');
-include($_SERVER['DOCUMENT_ROOT'].PATH.'/functions/config_db.php');
 
 function __($text, $lang = '', $type = '') {
 	return translate($text, $lang, $type);
@@ -58,15 +57,12 @@ function check_PIN($pin) {
 
 function connect_database() {
 // This function returns an object representing the connection to the MySQL server
-	global $db_host;
-	global $db_user;
-	global $db_pass;
-	global $db_name;
+	$config = get_config(['db_host', 'db_user', 'db_pass', 'db_name']);
 
 	mysqli_report(MYSQLI_REPORT_STRICT);
 
 	try {
-		$con = new mysqli($db_host, $db_user, $db_pass, $db_name);
+		$con = new mysqli(...array_values($config));
 	} catch (Exception $exception) {
 		echo 'Caught exception: [',$exception->getCode(), '] ',  $exception->getMessage(), "\n";
 		exit;
@@ -121,6 +117,41 @@ function convert_datetime($from, $to, $datetime) {
 	$date = date_create($datetime, timezone_open($from));
 	date_timezone_set($date, timezone_open($to));
 	return date_format($date, 'Y-m-d H:i');
+}
+
+function get_config($key) {
+	$dir = $_SERVER['DOCUMENT_ROOT'].PATH.'/config';
+	$files = scandir($dir);
+	$files = array_filter($files, function($file) {
+		return preg_match('/^.+\.php$/', $file);
+	});
+
+	$config = [];
+
+	foreach($files as $file) {
+		$cSection = include($_SERVER['DOCUMENT_ROOT'].PATH.'/config/'.$file);
+		foreach($cSection as $cKey => $cValue) {
+			foreach($cSection[$cKey] as $ccKey => $ccValue) {
+				$config[$cKey.'_'.$ccKey] = $ccValue;
+			}
+		}
+	}
+
+	if (is_array($key)) {
+		$configs = [];
+		foreach($config as $configKey => $configValue) {
+			if (in_array($configKey, $key)) {
+				$configs[$configKey] = $configValue;
+			}
+		}
+		return $configs;
+	}
+
+	if (isset($config[$key])) {
+		return $config[$key];
+	}
+
+	return false;
 }
 
 function get_datetime($timezone = '') {

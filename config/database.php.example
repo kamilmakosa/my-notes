@@ -1,0 +1,12 @@
+<?php
+if (!defined("ALLOW_INCLUDE"))	die('Access forbidden');
+
+return [
+    'db' => [
+        'host' => 'localhost',
+        'port' => '3306',
+        'user' => 'root',
+        'pass' => '',
+        'database' => 'mynotes',
+    ],
+];
