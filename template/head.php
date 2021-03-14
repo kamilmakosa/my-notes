@@ -10,7 +10,7 @@ if(!defined("ALLOW_INCLUDE"))	die('Access forbidden');
 	<meta name="keywords" content="bookmarks, notes">
 	<meta name="author" content="Kamil Mąkosa">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<base href="/demo/my-notes/">
+	<base href="<?= PATH ?>">
 	<link rel="shortcut icon" type="image/png" href="images/favicon.ico"/>
 	<link rel="stylesheet" type="text/css" href="styles/css_reset.css">
 	<link rel="stylesheet" type="text/css" href="styles/styles.css">
