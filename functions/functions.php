@@ -63,11 +63,15 @@ function connect_database() {
 	global $db_pass;
 	global $db_name;
 
-	$con = @mysqli_connect($db_host, $db_user, $db_pass, $db_name);
-	if (!$con) {
-		//echo "Connection error: ".mysqli_connect_errno().' - '.mysqli_connect_error();
-		return false;
+	mysqli_report(MYSQLI_REPORT_STRICT);
+
+	try {
+		$con = new mysqli($db_host, $db_user, $db_pass, $db_name);
+	} catch (Exception $exception) {
+		echo 'Caught exception: [',$exception->getCode(), '] ',  $exception->getMessage(), "\n";
+		exit;
 	}
+
 	mysqli_query($con,"SET NAMES 'utf8' COLLATE 'utf8_polish_ci'");
 	return $con;
 }
