@@ -16,6 +16,6 @@ function cookiesInfoClose() {
 			//alert(this.responseText);
 		}
 	};
-	xmlhttp.open("GET", "/demo/my-notes/functions/functions_ajax.php?function=hidden_cookies_panel", true);
+	xmlhttp.open("GET", PATH+"ajax.php?function=hidden_cookies_panel", true);
 	xmlhttp.send();
 }

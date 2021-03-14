@@ -6,7 +6,7 @@ function setLanguage(lang) {
 			location.reload();
 		}
 	};
-	xmlhttp.open("GET", "/demo/my-notes/functions/functions_ajax.php?function=set_language_cookie&lang="+lang, true);
+	xmlhttp.open("GET", PATH+"ajax.php?function=set_language_cookie&lang="+lang, true);
 	xmlhttp.send();
 }
 

@@ -193,7 +193,7 @@ function check_user_login(string) {
 				document.getElementById("login_reserved_status").innerHTML = this.responseText;
             }
         };
-        xmlhttp.open("GET", "/demo/my-notes/functions/functions_ajax.php?function=check_user_login&string=" + string, true);
+        xmlhttp.open("GET", PATH+"ajax.php?function=check_user_login&string=" + string, true);
         xmlhttp.send();
 	}
 }
@@ -210,7 +210,7 @@ function check_user_password(string) {
 				document.getElementById("password_strength").innerHTML = this.responseText+"%";
             }
         };
-        xmlhttp.open("GET", "/demo/my-notes/functions/functions_ajax.php?function=check_user_password&string=" + string, true);
+        xmlhttp.open("GET", PATH+"ajax.php?function=check_user_password&string=" + string, true);
         xmlhttp.send();
 	}
 }
