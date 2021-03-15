@@ -7,6 +7,6 @@ return [
         'port' => '3306',
         'user' => 'root',
         'pass' => '',
-        'database' => 'mynotes',
+        'name' => 'mynotes',
     ],
 ];

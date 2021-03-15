@@ -400,12 +400,12 @@ function get_timezone_select() {
 
 function get_title() {
 	$splitURL = explode('/', substr($_SERVER['REQUEST_URI'], strlen(PATH)));
-	if ($splitURL[1] == '' || $splitURL[1] == 'home') {
+	if ($splitURL[0] == '' || $splitURL[0] == 'home') {
 		return 'MójSchowek.pl';
 	} elseif ($splitURL[1] == 'ap') {
 		return __('Administration Panel').' - '.__('sitename');
 	} else {
-		return __('sitename').' - '.__(ucfirst($splitURL[1]));
+		return __('sitename').' - '.__(ucfirst($splitURL[0]));
 	}
 }
 

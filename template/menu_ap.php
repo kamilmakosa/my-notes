@@ -1,10 +1,12 @@
 <?php
 if (!defined("ALLOW_INCLUDE"))	die('Access forbidden');
 if (!@$page) {
-	$splitURL = explode('/', substr($_SERVER['REQUEST_URI'], strlen(PATH)));
-	$page = $splitURL[2];
+	$splitURL = explode('/', trim(substr($_SERVER['REQUEST_URI'], strlen(PATH)), '/'));
+	if ($splitURL[1]) {
+		$page = $splitURL[1];
+	}
 }
-if ($page == "")	$page = "start";
+if (@$page == '')	$page = "start";
 ?>
 
 <body>
