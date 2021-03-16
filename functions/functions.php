@@ -662,6 +662,19 @@ function random_string($length) {
 	return $random_string;
 }
 
+function location($location) {
+	return '/'.trim(PATH, '/').'/'.trim($location, '/');
+}
+
+function redirect($location, $time = 0) {
+	$location = location($location);
+	if ($time) {
+		header("Refresh: $time; URL=".$location);
+	} else {
+		header('Location: '.$location);
+	}
+}
+
 function send_confirmation_email($name, $mail, $user_activation_key) {
 // This function send confirmation mail
 
