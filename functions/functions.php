@@ -450,11 +450,9 @@ function get_user_stats($type, $public = false, $user = '') {
 	}
 }
 
-function icon($name,$link = '') {
-	$src = $_SERVER['DOCUMENT_ROOT'].'/icons/'.$name.'.png';
-	$src = '/icons/'.$name.'.png';
-	if (!empty($link)) {
-		return '<a href="'.$link.'"><i class="material-icons">'.$name.'</i></a>';
+function icon($name,$location = '') {
+	if (!empty($location)) {
+		return '<a href="'.location($location).'"><i class="material-icons">'.$name.'</i></a>';
 	}
 	return '<i class="material-icons">'.$name.'</i>';
 }
