@@ -772,6 +772,10 @@ function set_user_last_login($login) {
 	return true;
 }
 
+function split_url() {
+	return explode('/', trim(substr($_SERVER['REQUEST_URI'], strlen(PATH)), '/'));
+}
+
 function translate($text, $lang = '', $type = '') {
 	//Tłumaczenie na język użytkownika zapamiętany w sesji
 	if ($lang == '') {
