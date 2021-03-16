@@ -25,7 +25,7 @@ echo $query;
 				$alert = alert('warning','Nie możemy zapisać notatki.');
 			} else {
 				$_SESSION['notes_alert'] = alert('success','Zapisano notatkę.');
-				header('Location: '.PATH.'/notes/');
+				redirect('/notes/');
 			}
 		}
 	}

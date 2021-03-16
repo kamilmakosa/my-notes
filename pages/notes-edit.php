@@ -32,7 +32,7 @@ if (isset($_SESSION['user_login'])) {
 					echo mysqli_error($con);
 				} else {
 					$_SESSION['notes_alert'] = alert('success','Zapisano zmiany.');
-					header('Location: '.PATH.'/notes/');
+					redirect('/notes/');
 				}
 			}
 		}

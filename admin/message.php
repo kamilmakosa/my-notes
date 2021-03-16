@@ -5,7 +5,7 @@ include($_SERVER['DOCUMENT_ROOT'].PATH.'/template/head.php');
 include($_SERVER['DOCUMENT_ROOT'].PATH.'/template/menu_ap.php');
 
 if (!isset($_SESSION['user_login']) || get_user_info('user_name') != 'Administrator') {
-	header('Location: /signin');
+	redirect('/signin');
 	exit;
 }
 

@@ -5,7 +5,7 @@ include($_SERVER['DOCUMENT_ROOT'].PATH.'/template/head.php');
 include($_SERVER['DOCUMENT_ROOT'].PATH.'/template/menu_ap.php');
 
 if (!isset($_SESSION['user_login']) || get_user_info('user_name') != 'Administrator') {
-	header('Location: /signin');
+	redirect('/signin');
 	exit;
 }
 
@@ -28,7 +28,7 @@ if (isset($operation)) {
 		$query = "DELETE FROM `ms_news` WHERE news_ID='$position'";
 		$result = mysqli_query($con,$query);
 		$_SESSION['notes_alert'] = alert('success','News usunięty.');
-		header('Location: /ap/news/');
+		redirect('/ap/news/');
 		exit;
 	}
 }
@@ -56,7 +56,7 @@ if (isset($_POST['news_title']) && isset($_POST['news_category']) && isset($_POS
 					$alert = alert('warning','Nie możemy zapisać zmian.');
 				} else {
 					$_SESSION['notes_alert'] = alert('success','Zapisano news.');
-					header('Location: /ap/news/');
+					redirect('/ap/news/');
 					exit;
 				}
 			} else {
@@ -65,7 +65,7 @@ if (isset($_POST['news_title']) && isset($_POST['news_category']) && isset($_POS
 					$alert = alert('warning','Nie możemy zapisać newsa.');
 				} else {
 					$_SESSION['notes_alert'] = alert('success','News zapisany.');
-					header('Location: /ap/news/');
+					redirect('/ap/news/');
 					exit;
 				}
 			}

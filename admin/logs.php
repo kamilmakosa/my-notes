@@ -5,7 +5,7 @@ include($_SERVER['DOCUMENT_ROOT'].PATH.'/template/head.php');
 include($_SERVER['DOCUMENT_ROOT'].PATH.'/template/menu_ap.php');
 
 if (!isset($_SESSION['user_login']) || get_user_info('user_name') != 'Administrator') {
-	header('Location: /signin');
+	redirect('/signin');
 	exit;
 }
 
@@ -28,28 +28,28 @@ if (isset($operation)) {
 		$query = "UPDATE `ms_users` SET user_status='actived user' WHERE user_ID='$position'";
 		$result = mysqli_query($con,$query);
 		$_SESSION['notes_alert'] = alert('success','Aktywowano użytkownika.');
-		header('Location: /ap/users/');
+		redirect('/ap/users/');
 		exit;
 	}
 	if ($operation == 'delete') {
 		$query = "DELETE FROM `ms_users` WHERE user_ID='$position'";
 		$result = mysqli_query($con,$query);
 		$_SESSION['notes_alert'] = alert('success','Usunięto użytkownika.');
-		header('Location: /ap/users/');
+		redirect('/ap/users/');
 		exit;
 	}
 	if ($operation == 'lock') {
 		$query = "UPDATE `ms_users` SET user_status='blocked user' WHERE user_ID='$position'";
 		$result = mysqli_query($con,$query);
 		$_SESSION['notes_alert'] = alert('success','Zablokowano użytkownika.');
-		header('Location: /ap/users/');
+		redirect('/ap/users/');
 		exit;
 	}
 	if ($operation == 'unlock') {
 		$query = "UPDATE `ms_users` SET user_status='actived user' WHERE user_ID='$position'";
 		$result = mysqli_query($con,$query);
 		$_SESSION['notes_alert']= alert('success','Odblokowano użytkownika.');
-		header('Location: /ap/users/');
+		redirect('/ap/users/');
 		exit;
 	}
 }
@@ -75,7 +75,7 @@ if (isset($_POST['user_login']) && isset($_POST['user_name']) && isset($_POST['u
 				$alert = alert('warning','Nie możemy zapisać zmian w edycji użytkownika.');
 			} else {
 				$_SESSION['notes_alert'] = alert('success','Zapisano zmiany.');
-				header('Location: /ap/users/');
+				redirect('/ap/users/');
 				exit;
 			}
 		}

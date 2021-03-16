@@ -47,7 +47,7 @@ if (isset($operation)) {
 		$query = "UPDATE `ms_notes` SET notes_position='$position2' WHERE notes_owner='$user_login' AND notes_position='0'";
 		$result = mysqli_query($con,$query);
 		$_SESSION['notes_alert'] = alert('success','Przesunięto notatkę.');
-		header('Location: '.PATH.'/notes/');
+		redirect('/notes/');
 	}
 
 	if ($operation == 'down' && $position != $rowcount) {
@@ -59,7 +59,7 @@ if (isset($operation)) {
 		$query = "UPDATE `ms_notes` SET notes_position='$position2' WHERE notes_owner='$user_login' AND notes_position='0'";
 		$result = mysqli_query($con,$query);
 		$_SESSION['notes_alert'] = alert('success','Przesunięto notatkę.');
-		header('Location: '.PATH.'/notes/');
+		redirect('/notes/');
 	}
 	if ($operation == 'delete') {
 		$query = "DELETE FROM `ms_notes` WHERE notes_owner='$user_login' AND notes_position='$position'";
@@ -72,19 +72,19 @@ if (isset($operation)) {
 			$result2 = mysqli_query($con,$query);
 			$position++;
 		}
-		header('Location: '.PATH.'/notes/');
+		redirect('/notes/');
 	}
 	if ($operation == 'lock') {
 		$query = "UPDATE `ms_notes` SET notes_public='private' WHERE notes_owner='$user_login' AND notes_position='$position'";
 		$result = mysqli_query($con,$query);
 		$_SESSION['notes_alert'] = alert('success','Zablokowano notatkę. Status: prywatna.');
-		header('Location: /notes/');
+		redirect('/notes/');
 	}
 	if ($operation == 'unlock') {
 		$query = "UPDATE `ms_notes` SET notes_public='public' WHERE notes_owner='$user_login' AND notes_position='$position'";
 		$result = mysqli_query($con,$query);
 		$_SESSION['notes_alert']= alert('success','Odblokowano notatkę. Status: publiczna.');
-		header('Location: '.PATH.'/notes/');
+		redirect('/notes/');
 	}
 }
 ?>

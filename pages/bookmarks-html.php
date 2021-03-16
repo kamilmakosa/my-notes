@@ -45,7 +45,7 @@ if (isset($operation)) {
 		$query = "UPDATE `ms_bookmarks` SET bookmark_position='$position2' WHERE bookmark_owner='$user_login' AND bookmark_position='0'";
 		$result = mysqli_query($con,$query);
 		$_SESSION['notes_alert'] = alert('success','Przesunięto notatkę.');
-		header('Location: '.PATH.'/bookmarks/');
+		redirect('/bookmarks/');
 	}
 
 	if ($operation == 'down' && $position != $rowcount) {
@@ -57,7 +57,7 @@ if (isset($operation)) {
 		$query = "UPDATE `ms_bookmarks` SET bookmark_position='$position2' WHERE bookmark_owner='$user_login' AND bookmark_position='0'";
 		$result = mysqli_query($con,$query);
 		$_SESSION['notes_alert'] = alert('success','Przesunięto notatkę.');
-		header('Location: '.PATH.'/bookmarks/');
+		redirect('/bookmarks/');
 	}
 	if ($operation == 'delete') {
 		$query = "DELETE FROM `ms_bookmarks` WHERE bookmark_owner='$user_login' AND bookmark_position='$position'";
@@ -70,7 +70,7 @@ if (isset($operation)) {
 			$result2 = mysqli_query($con,$query);
 			$position++;
 		}
-		header('Location: '.PATH.'/bookmarks/');
+		redirect('/bookmarks/');
 	}
 }
 
@@ -99,7 +99,7 @@ if (isset($_POST['bookmark_name']) && isset($_POST['bookmark_tags']) && isset($_
 					$alert = alert('warning','Nie możemy zapisać zakładki.');
 				} else {
 					$_SESSION['notes_alert'] = alert('success','Zapisano nową zakładkę.');
-					header('Location: '.PATH.'/bookmarks/');
+					redirect('/bookmarks/');
 					exit;
 				}
 			} elseif ($_POST['bookmarktype']=='edit') {
@@ -108,7 +108,7 @@ if (isset($_POST['bookmark_name']) && isset($_POST['bookmark_tags']) && isset($_
 					$alert = alert('warning','Nie możemy zapisać zakładki.');
 				} else {
 					$_SESSION['notes_alert'] = alert('success','Zapisano zmiany w zakładce.');
-					header('Location: '.PATH.'/bookmarks/');
+					redirect('/bookmarks/');
 					exit;
 				}
 			} else {

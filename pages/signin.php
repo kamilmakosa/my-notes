@@ -35,7 +35,7 @@ if (isset($_POST['user_login']) && isset($_POST['user_pass'])) {
 					}
 					set_active_lang();
 					$alert = alert('success',__('Logowanie zakończone.').'<br>'.__('Za chwilę zostaniesz przeniesiony na stronę główną.'));
-					header("Refresh: 4; URL=/home");
+					redirect("/home", 4);
 				}
 			} else {
 				$alert = alert('danger',__('Logowanie zakończone niepowodzeniem.'));

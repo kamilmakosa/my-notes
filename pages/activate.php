@@ -30,7 +30,7 @@ if (isset($_POST['user_login']) && isset($_POST['user_key']) && isset($_POST['us
 						$query = "UPDATE ms_users SET user_status='actived user', user_PIN='$pin' WHERE user_login='$login' AND user_activation_key='$key'";
 						$result = mysqli_query($con,$query);
 						$alert = alert('success',__('Konto zostało aktywowane.<br> Za chwilę zostaniesz przeniesiony na stronę logowania.'));	
-						header("Refresh: 5; URL=/signin");
+						redirect("/signin", 5);
 					} elseif ($array['user_status'] === 'non-actived user' && get_option('users_can_accepted') == 'true') {
 						$query = "UPDATE ms_users SET user_status='non-accepted user', user_PIN='$pin' WHERE user_login='$login' AND user_activation_key='$key'";
 						$result = mysqli_query($con,$query);
