@@ -12,7 +12,7 @@ $con = connect_database();
 if ($con === false) {
 	echo alert('info','Przepraszamy, nie możemy pobrać zawartości strony. Spróbuj później.');
 } else {
-	$splitURL = explode('/', substr($_SERVER['REQUEST_URI'], strlen(PATH)));
+	$splitURL = split_url();
 	$idnews = @$splitURL[3];
 
 	$query = "SELECT * FROM `ms_news` WHERE news_status='public' OR news_status='publish_only-user' ORDER BY news_ID DESC;";

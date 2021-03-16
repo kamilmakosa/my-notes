@@ -399,7 +399,7 @@ function get_timezone_select() {
 }
 
 function get_title() {
-	$splitURL = explode('/', substr($_SERVER['REQUEST_URI'], strlen(PATH)));
+	$splitURL = split_url();
 	if ($splitURL[0] == '' || $splitURL[0] == 'home') {
 		return 'MójSchowek.pl';
 	} elseif ($splitURL[1] == 'ap') {

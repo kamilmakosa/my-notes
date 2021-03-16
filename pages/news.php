@@ -28,7 +28,7 @@ if ($con === false) {
 			$news_per_site = get_user_info('user_news_ps');
 		}
 
-		$splitURL = explode('/', substr($_SERVER['REQUEST_URI'], strlen(PATH)));
+		$splitURL = split_url();
 		$page = @$splitURL[2];
 		if ($page == "") { $page = 1; }
 

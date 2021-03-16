@@ -1,7 +1,7 @@
 <?php
 if (!defined("ALLOW_INCLUDE"))	die('Access forbidden');
 if (!@$page) {
-	$splitURL = explode('/', trim(substr($_SERVER['REQUEST_URI'], strlen(PATH)), '/'));
+	$splitURL = split_url();
 	if ($splitURL[1]) {
 		$page = $splitURL[1];
 	}

@@ -54,7 +54,7 @@ if ($m == 12) {
 				</thead>
 				<tbody>
 <?php
-	$splitURL = explode('/', substr($_SERVER['REQUEST_URI'], strlen(PATH)));
+	$splitURL = split_url();
 	if (@$splitURL[2] != '' && @$splitURL[3] != '') {
 		$year = $splitURL[2];
 		$month = $splitURL[3];

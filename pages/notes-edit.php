@@ -7,7 +7,7 @@ include($_SERVER['DOCUMENT_ROOT'].PATH.'/template/header.php');
 
 if (isset($_SESSION['user_login'])) {
 	$user_login = $_SESSION['user_login'];
-	$splitURL = explode('/', substr($_SERVER['REQUEST_URI'], strlen(PATH)));
+	$splitURL = split_url();
 	$notes_position = @$splitURL[3];
 	$notes_position = str_replace(array('/','\\'), '', $notes_position);
 

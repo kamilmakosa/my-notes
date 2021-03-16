@@ -15,7 +15,7 @@ if (isset($_SESSION['user_login']) && get_user_info('user_name') == 'Administrat
 		$alert = alert('info','Przepraszamy, nie możemy pobrać zawartości strony. Spróbuj później.');
 	} else {
 		$user_login = $_SESSION['user_login'];
-		$splitURL = explode('/', substr($_SERVER['REQUEST_URI'], strlen(PATH)));
+		$splitURL = split_url();
 		if (@$splitURL[3] != '' && @$splitURL[3] != '') {
 			$operation = $splitURL[3];
 			$position = $splitURL[4];

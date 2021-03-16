@@ -13,7 +13,7 @@ if (isset($_SESSION['user_login'])) {
 		$result = mysqli_query($con,$query);
 		$rowcount = mysqli_num_rows($result);
 
-		$splitURL = explode('/', substr($_SERVER['REQUEST_URI'], strlen(PATH)));
+		$splitURL = split_url();
 		if (@$splitURL[2] == '') {
 			$page = 1;
 		} elseif (@$splitURL[2] > 0) {
