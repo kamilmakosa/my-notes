@@ -13,7 +13,7 @@ if ($con === false) {
 	echo alert('info','Przepraszamy, nie możemy pobrać zawartości strony. Spróbuj później.');
 } else {
 	$splitURL = split_url();
-	$idnews = @$splitURL[3];
+	$idnews = @$splitURL[2];
 
 	$query = "SELECT * FROM `ms_news` WHERE news_status='public' OR news_status='publish_only-user' ORDER BY news_ID DESC;";
 	$result = mysqli_query($con,$query);

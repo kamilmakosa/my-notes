@@ -16,13 +16,13 @@ if (isset($_SESSION['user_login'])) {
 		$rowcount = mysqli_num_rows($result);
 
 		$splitURL = split_url();
-		if (@$splitURL[2] == '') {
+		if (@$splitURL[1] == '') {
 			$page = 1;
-		} elseif (@$splitURL[2] > 0) {
-			$page = $splitURL[2];
+		} elseif (@$splitURL[1] > 0) {
+			$page = $splitURL[1];
 		} else {
-			$operation = $splitURL[2];
-			$position = @$splitURL[3];
+			$operation = $splitURL[1];
+			$position = @$splitURL[2];
 			$page = 1;
 		}
 

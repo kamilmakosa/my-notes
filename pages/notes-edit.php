@@ -8,7 +8,7 @@ include($_SERVER['DOCUMENT_ROOT'].PATH.'/template/header.php');
 if (isset($_SESSION['user_login'])) {
 	$user_login = $_SESSION['user_login'];
 	$splitURL = split_url();
-	$notes_position = @$splitURL[3];
+	$notes_position = @$splitURL[2];
 	$notes_position = str_replace(array('/','\\'), '', $notes_position);
 
 	if (isset($_POST['note_name']) && isset($_POST['note_tags']) && isset($_POST['note_content'])) {

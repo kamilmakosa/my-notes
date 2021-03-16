@@ -8,7 +8,7 @@ $link = '';
 
 if ($operation == 'edit' && $con != false) {
 	$user_login = $_SESSION['user_login'];
-	$bookmark_position = @$splitURL[3];
+	$bookmark_position = @$splitURL[2];
 	$query = "SELECT * FROM `ms_bookmarks` WHERE bookmark_position='$bookmark_position' AND bookmark_owner='$user_login';";
 	$result = mysqli_query($con,$query);
 	$array = mysqli_fetch_assoc($result);

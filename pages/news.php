@@ -29,7 +29,7 @@ if ($con === false) {
 		}
 
 		$splitURL = split_url();
-		$page = @$splitURL[2];
+		$page = @$splitURL[1];
 		if ($page == "") { $page = 1; }
 
 		if ($page-1 >= ceil($rowcount/$news_per_site)) {

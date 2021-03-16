@@ -16,9 +16,9 @@ if (isset($_SESSION['user_login']) && get_user_info('user_name') == 'Administrat
 	} else {
 		$user_login = $_SESSION['user_login'];
 		$splitURL = split_url();
-		if (@$splitURL[3] != '' && @$splitURL[3] != '') {
-			$operation = $splitURL[3];
-			$position = $splitURL[4];
+		if (@$splitURL[2] != '' && @$splitURL[3] != '') {
+			$operation = $splitURL[2];
+			$position = $splitURL[3];
 		}
 	}
 }

@@ -15,8 +15,8 @@ if(isset($_SESSION['notes_alert'])) {
 check_access(true); //DOSTĘP TYLKO DLA ZALOGOWANYCH
 echo @$alert;
 
-$y = @$splitURL[2];
-$m = @$splitURL[3];
+$y = @$splitURL[1];
+$m = @$splitURL[2];
 if(empty($y)) $y = date("Y");
 if(empty($m)) $m = date("m");
 $y1= $y;
@@ -55,9 +55,9 @@ if ($m == 12) {
 				<tbody>
 <?php
 	$splitURL = split_url();
-	if (@$splitURL[2] != '' && @$splitURL[3] != '') {
-		$year = $splitURL[2];
-		$month = $splitURL[3];
+	if (@$splitURL[1] != '' && @$splitURL[2] != '') {
+		$year = $splitURL[1];
+		$month = $splitURL[2];
 	}
 
 	if(empty($year)) $year = date("Y");

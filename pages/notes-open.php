@@ -7,7 +7,7 @@ include($_SERVER['DOCUMENT_ROOT'].PATH.'/template/header.php');
 
 $splitURL = split_url();
 $page = 'notes';
-$notes_ID = @$splitURL[3];
+$notes_ID = @$splitURL[2];
 $notes_ID = str_replace(array('/','\\'), '', $notes_ID);
 if($notes_ID < 1) {
 	return include($_SERVER['DOCUMENT_ROOT'].PATH.'/404.php');
